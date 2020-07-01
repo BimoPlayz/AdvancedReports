@@ -1,0 +1,50 @@
+##########################################################
+#                   AdvancedReports                      #
+#                    by BimoPlayz                        #
+##########################################################
+# AdvancedReports v0.0.1 - Configuration
+version: 0.0.1
+
+#Do not change if you don't know what are you doing.
+#MySQL Database Connection
+MySQL:
+  host: "localhost"
+  port: "3306"
+  database: "advancedreports"
+  username: "root"
+  password: ""
+
+settings:
+#Whether to send title messages or not.
+  title-message: true
+
+#Prefix used in all messages
+prefix: "&aReports &8» "
+
+messages:
+  reload-success: 
+    - "&7Successfully reloaded!"
+  reload-fail: "&cFailed to reload, config has broken syntax. Check console for more info."
+  bar-announced: "&7Bar message successfuly announced."
+  bossbar-toggle-on: "&7Bossbar module has been activated."
+  bossbar-toggle-off: "&7Bossbar module mode has been activated."
+  preview-name-on: "&7Preview name mode has been activated."
+  preview-name-off: "&7Preview name mode has been deactivated."
+  info: "&7Type '/report help' for more info."
+  report: "&7has been reported for"
+  subcommand: "&7%args% isn't a valid sub-command"
+  null-player: "&7That player does not exists."
+  non-player: "&7Only players can access that command."
+  no-permission: "&cYou do not have access to that command."
+#Report Reasons
+  KillAura: "&eKillAura"
+  Flight: "&eFlight"
+  Nuker: "&eNuker"
+  
+menu:
+  title: "&a&nReports&r &8» &aMain"
+  active-reports: "&c&lActive Reports"
+  solved-reports: "&a&lSolved Reports"
+  player-name: "&a"
+  report-reason: "&eReasons:"
+  return-back: "&c&lGo Back"

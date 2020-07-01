@@ -1,0 +1,15 @@
+name: AdvancedReports
+main: me.bimoplayz.advancedreports.bukkit.AdvancedReports
+author: BimoPlayz
+description: Advanced report system to fully customize your reports and catch cheaters and rule breakers!
+version: 0.0.1
+website: https://www.spigotmc.org/resources/advancedtab/
+depend: []
+api-version: 1.13
+softdepend: []
+
+commands:
+  advancedreports:
+    description: Main command for AdvancedReports
+    aliases: [areport, report]
+    usage: /report <subcommand>
