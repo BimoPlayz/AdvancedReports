@@ -6,6 +6,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.event.inventory.InventoryType;
 
+import me.bimoplayz.advancedreports.bukkit.commands.subcommands.PlayerReport;
 import me.bimoplayz.advancedreports.bukkit.features.MainGUI;
 import me.bimoplayz.advancedreports.bukkit.features.ManagePlayersGUI;
 
@@ -13,10 +14,12 @@ public class ManagePlayersMenuEvent implements Listener {
 	
 	private MainGUI menu;
 	private ManagePlayersGUI managePlayersMenu;
+	private PlayerReport playerReport;
 	
 	public ManagePlayersMenuEvent() {
 		menu = new MainGUI(null);
 		managePlayersMenu = new ManagePlayersGUI(null);
+		playerReport = new PlayerReport(null);
 	}
 	
 	@EventHandler
@@ -34,7 +37,7 @@ public class ManagePlayersMenuEvent implements Listener {
 	
 			switch(event.getSlot()) {
 			case 11:
-				player.teleport(player.getLocation());
+				player.teleport(playerReport.getTarget().getLocation());
 				player.updateInventory();
 				break;
 			case 31:

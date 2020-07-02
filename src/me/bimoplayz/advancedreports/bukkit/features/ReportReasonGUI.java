@@ -18,6 +18,7 @@ public class ReportReasonGUI {
 	}
 	
 	private static Inventory INV;
+	private static String META;
 	
 	public void createMenu() {
 		Inventory inv = Bukkit.createInventory(null, 27, ChatColor.translateAlternateColorCodes('&', plugin.getConfig().getString("menu.title")));
@@ -65,8 +66,10 @@ public class ReportReasonGUI {
 		inv.setItem(16, item);
 		
 		setInventory(inv);
+		setReason(meta.getDisplayName());
 	}
 	
+	//- Inventory Getter/Setter/Opener Methods
 	public Inventory getInventory() {
 		return INV;
 	}
@@ -77,5 +80,14 @@ public class ReportReasonGUI {
 	
 	public void openInventory(Player player) {
 		player.openInventory(INV);
+	}
+	
+	//- Reason Getter/Setter/ Methods
+	public String getReason() {
+		return META;
+	}
+	
+	public void setReason(String metaDisplayName) {
+		META = metaDisplayName;
 	}
 }

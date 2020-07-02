@@ -2,7 +2,20 @@
 <classpath>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="lib" path="C:/Users/User/Desktop/Spigot 1.15.2/spigot-1.15.2.jar"/>
-	<classpathentry kind="lib" path="C:/Users/User/Desktop/Spigot 1.15.2/PlaceholderAPI-2.10.6.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/Desktop/Spigot/Spigot 1.15.2/spigot-1.15.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/Desktop/Spigot/Spigot 1.15.2/PlaceholderAPI-2.10.6.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/Desktop/Spigot/Spigot 1.16.1/spigot-1.16.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/Desktop/Spigot/Spigot 1.15.1/spigot-1.15.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/Desktop/Spigot/Spigot 1.15/spigot-1.15.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/Desktop/Spigot/Spigot 1.14.4/spigot-1.14.4.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/Desktop/Spigot/Spigot 1.14.3/spigot-1.14.3.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/Desktop/Spigot/Spigot 1.14.2/spigot-1.14.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/Desktop/Spigot/Spigot 1.14.1/spigot-1.14.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/Desktop/Spigot/Spigot 1.14/spigot-1.14.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/Desktop/Spigot/Spigot 1.13.2/spigot-1.13.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/Desktop/Spigot/Spigot 1.12/spigot-1.12.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/Desktop/Spigot/Spigot 1.10/spigot-1.10-R0.1-SNAPSHOT-latest.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/Desktop/Spigot/Spigot 1.9/spigot-1.9-R0.1-SNAPSHOT-latest.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/Desktop/Spigot/Spigot 1.8.8/spigot-1.8.8-R0.1-SNAPSHOT-latest.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

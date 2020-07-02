@@ -5,6 +5,9 @@
 # AdvancedReports v0.0.1 - Configuration
 version: 0.0.1
 
+#Prefix used in all messages
+prefix: "&aReports &8» "
+
 #Do not change if you don't know what are you doing.
 #MySQL Database Connection
 MySQL:
@@ -15,11 +18,8 @@ MySQL:
   password: ""
 
 settings:
-#Whether to send title messages or not.
+  #Whether to send title messages or not.
   title-message: true
-
-#Prefix used in all messages
-prefix: "&aReports &8» "
 
 messages:
   reload-success: 

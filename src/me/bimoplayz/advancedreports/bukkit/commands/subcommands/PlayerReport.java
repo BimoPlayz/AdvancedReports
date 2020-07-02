@@ -14,6 +14,8 @@ import net.md_5.bungee.api.chat.TextComponent;
 
 public class PlayerReport implements CommandInterface {
 	
+	private static Player TARGET;;
+	
 	AdvancedReports plugin;
 	public PlayerReport (AdvancedReports plugin) {
 		this.plugin = plugin;
@@ -35,11 +37,21 @@ public class PlayerReport implements CommandInterface {
 				reportReasonMenu.openInventory(player);
 				if (plugin.getConfig().getBoolean("settings.title-message") == true) {
 					player.spigot().sendMessage(ChatMessageType.ACTION_BAR, new TextComponent(ChatColor.translateAlternateColorCodes('&', "&7" + target.getName()+ " " + "&a&lREPORTED")));
+				   
+					setTarget(target);
 				}
 			}
 		} else if (args.length == 1) {
 			sender.sendMessage(ChatColor.translateAlternateColorCodes('&', plugin.getConfig().getString("prefix") + "&7Usage: /report player <player_name>"));
 		}
 		return false;
+	}
+	
+	public Player getTarget() {
+		return TARGET;
+	}
+	
+	public void setTarget(Player target) {
+		TARGET = target;
 	}
 }

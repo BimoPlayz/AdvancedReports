@@ -30,11 +30,25 @@ import me.bimoplayz.advancedreports.bukkit.features.ManagePlayersGUI;
 import me.bimoplayz.advancedreports.bukkit.features.ReportReasonGUI;
 import me.bimoplayz.advancedreports.bukkit.features.SolvedReportsGUI;
 import me.bimoplayz.advancedreports.bukkit.net.UpdateNotifier;
+import me.bimoplayz.advancedreports.bukkit.utils.versionspecific.VersionSpecificUtils;
+import me.bimoplayz.advancedreports.bukkit.utils.versionspecific.VersionSpecificUtils_v1_10_R1;
+import me.bimoplayz.advancedreports.bukkit.utils.versionspecific.VersionSpecificUtils_v1_11_R1;
+import me.bimoplayz.advancedreports.bukkit.utils.versionspecific.VersionSpecificUtils_v1_12_R1;
+import me.bimoplayz.advancedreports.bukkit.utils.versionspecific.VersionSpecificUtils_v1_13_R1;
+import me.bimoplayz.advancedreports.bukkit.utils.versionspecific.VersionSpecificUtils_v1_14_R1;
+import me.bimoplayz.advancedreports.bukkit.utils.versionspecific.VersionSpecificUtils_v1_15_R1;
+import me.bimoplayz.advancedreports.bukkit.utils.versionspecific.VersionSpecificUtils_v1_16_R1;
+import me.bimoplayz.advancedreports.bukkit.utils.versionspecific.VersionSpecificUtils_v1_7_R1;
+import me.bimoplayz.advancedreports.bukkit.utils.versionspecific.VersionSpecificUtils_v1_8_R1;
+import me.bimoplayz.advancedreports.bukkit.utils.versionspecific.VersionSpecificUtils_v1_9_R1;
 import me.bimoplayz.advancedreports.common.database.MySQL;
 import me.bimoplayz.advancedreports.common.database.SQLGetter;
 
 public class AdvancedReports extends JavaPlugin {
 
+	public String serverVersion;
+	public VersionSpecificUtils version;
+	
 	public MySQL SQL;
 	public SQLGetter data;
 		
@@ -62,6 +76,19 @@ public class AdvancedReports extends JavaPlugin {
 	
 	@Override
 	public void onEnable() {
+		
+		//- #===============^===============#
+		//               Version
+		//                Check
+		
+		if (!versionManager()) {
+			Bukkit.getLogger().severe("[AdvancedReports] Failed to load AdvancedReports!");
+			Bukkit.getLogger().severe("[AdvancedReports] Running incompatible version!");
+			
+			Bukkit.getPluginManager().disablePlugin(this);
+		}
+		
+		//- #===============^===============#
 		
 		//- #===============^===============#
 		//                MySQL
@@ -144,8 +171,39 @@ public class AdvancedReports extends JavaPlugin {
 		Bukkit.getLogger().info(ChatColor.translateAlternateColorCodes('&', "[AdvancedReports] Database disconnected"));
 	}
 
+	private boolean versionManager() {
+		serverVersion = "N/A";
+		
+		try {
+			serverVersion = Bukkit.getServer().getClass().getPackage().getName().split("\\.")[3];
+		} catch (ArrayIndexOutOfBoundsException e) {
+			return false;
+		}
+		if (serverVersion.equals("v1_7_R1"))
+			version = new VersionSpecificUtils_v1_7_R1();
+		else if (serverVersion.equals("v1_8_R1"))
+			version = new VersionSpecificUtils_v1_8_R1();
+		else if (serverVersion.equals("v1_9_R1"))
+			version = new VersionSpecificUtils_v1_9_R1();
+		else if (serverVersion.equals("v1_10_R1"))
+			version = new VersionSpecificUtils_v1_10_R1();
+		else if (serverVersion.equals("v1_11_R1"))
+			version = new VersionSpecificUtils_v1_11_R1();
+		else if (serverVersion.equals("v1_12_R1"))
+			version = new VersionSpecificUtils_v1_12_R1();
+		else if (serverVersion.equals("v1_13_R1"))
+			version = new VersionSpecificUtils_v1_13_R1();
+		else if (serverVersion.equals("v1_14_R1"))
+			version = new VersionSpecificUtils_v1_14_R1();
+		else if (serverVersion.equals("v1_15_R1"))
+			version = new VersionSpecificUtils_v1_15_R1();
+		else if (serverVersion.equals("v1_16_R1"))
+			version = new VersionSpecificUtils_v1_16_R1();
+		
+		return version != null;
+	}	
+	
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
-
 		return false;
 	}
 
