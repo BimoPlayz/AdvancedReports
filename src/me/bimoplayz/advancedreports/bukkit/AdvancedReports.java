@@ -22,6 +22,7 @@ import me.bimoplayz.advancedreports.bukkit.commands.subcommands.Version;
 import me.bimoplayz.advancedreports.bukkit.events.ActiveReportsMenuClickEvent;
 import me.bimoplayz.advancedreports.bukkit.events.ManagePlayersMenuEvent;
 import me.bimoplayz.advancedreports.bukkit.events.MenuClickEvent;
+import me.bimoplayz.advancedreports.bukkit.events.PlayerMuteEvent;
 import me.bimoplayz.advancedreports.bukkit.events.ReportReasonMenuClickEvent;
 import me.bimoplayz.advancedreports.bukkit.events.SolvedReportsMenuClickEvent;
 import me.bimoplayz.advancedreports.bukkit.features.ActiveReportsGUI;
@@ -152,6 +153,7 @@ public class AdvancedReports extends JavaPlugin {
         pluginManager.registerEvents(new SolvedReportsMenuClickEvent(), this);
         pluginManager.registerEvents(new ManagePlayersMenuEvent(), this);
         pluginManager.registerEvents(new ReportReasonMenuClickEvent(), this);
+        pluginManager.registerEvents(new PlayerMuteEvent(), this);
         
 		//- UpdateNotifier
         Logger logger = this.getLogger();
